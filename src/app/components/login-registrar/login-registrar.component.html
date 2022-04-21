@@ -1,0 +1,11 @@
+<div class="login">
+    <form [formGroup]="agregarusuario" (ngSubmit)="loginRegistrar()">
+        <h1>Login</h1>
+        <input [(ngModel)]="idSeleccion" (change)="capturar()" formControlName="id" type="text" class="form-control" id="id" placeholder="id">
+        <input formControlName="usuario" type="text" class="form-control" id="usuario" placeholder="usuario">
+        <input formControlName="contraseña" type="password" class="form-control" name="contraseña" placeholder="Contraseña" required="required" />
+        <input formControlName="rol" type="text" class="form-control" id="rol" placeholder="rol">
+
+        <button style="float: right;" class="btn btn-secondary justify-content-md-end" type="submit">Registrarse</button>
+    </form>
+</div>

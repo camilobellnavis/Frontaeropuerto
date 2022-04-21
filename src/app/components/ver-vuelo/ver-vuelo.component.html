@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;">
+    <img src="https://www.carvajalcomunicacion.com/wp-content/uploads/2020/10/Sello-Ambiental-Colombiano-2.jpg" class="card-img-top" alt="...">
+    <div *ngIf="vuelo != undefined" class="card-body">
+        <h3>Estado: {{vuelo.estado}}</h3>
+        <h5>Aerolínea: {{vuelo.aerolinea}}</h5>
+        <ul>
+            <li>Ciudad de Origen: {{vuelo.ciudadorigen}}</li>
+            <li>Ciudad de Destino:{{vuelo.ciudaddestino}}</li>
+            <li>Fecha de Vuelo: {{vuelo.fecha | date:'dd/MM/yyyy' }}</li>
+            <li>Hora de Salida: {{vuelo.horasalida}}</li>
+            <li>Hora Estimada de Llegada: {{vuelo.horallegada}}</li>
+            <li>N° de Vuelo: {{vuelo.numerodevuelo}}</li>
+        </ul>
+    </div>
+</div>

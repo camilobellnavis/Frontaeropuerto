@@ -1,0 +1,10 @@
+<div class="login">
+    <form [formGroup]="agregarusuario" (ngSubmit)="loginRegistrar()">
+        <h1>Login</h1>
+        <input [(ngModel)]="idSeleccion" (change)="capturar()" formControlName="id" type="text" class="form-control" id="id" placeholder="id">
+        <input formControlName="contraseña" type="password" class="form-control" name="contraseña" placeholder="Contraseña" required="required" />
+
+        <button class="btn btn-primary" type="submit">Loguearse</button>
+        <button routerLink="login" style="float: right;" class="btn btn-secondary justify-content-md-end">Registrarse</button>
+    </form>
+</div>

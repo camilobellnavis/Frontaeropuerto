@@ -1,0 +1,65 @@
+<h3 style="text-align: center;" class="mt-3">{{accion}} VUELO</h3>
+<form [formGroup]="agregarvuelo" (ngSubmit)="programarEditar()">
+    <div class="mb-3">
+        <label for="CiudadO" class="form-label">Ciudad Origen:</label>
+        <input formControlName="ciudadorigen" type="text" class="form-control" id="CiudadO" placeholder="Cali">
+    </div>
+    <span *ngIf="agregarvuelo.get('ciudadorigen')?.invalid && agregarvuelo.get('ciudadorigen')?.touched" class="text-danger">
+        La <strong>Ciudad de Origen</strong> es requerida
+    </span>
+
+    <div class="mb-3 mt-3">
+        <label for="CiudadD" class="form-label">Ciudad Destino:</label>
+        <input formControlName="ciudaddestino" type="text" class="form-control" id="CiudadD" placeholder="Bogotá">
+    </div>
+    <span *ngIf="agregarvuelo.get('ciudaddestino')?.invalid && agregarvuelo.get('ciudaddestino')?.touched" class="text-danger">
+        La <strong>Ciudad de Destino</strong> es requerida
+    </span>
+    <div class="mb-3">
+        <label for="Fecha">Fecha:</label>
+        <input formControlName="fecha" type="date" class="form-control" id="Fecha" value="2021-01-01" min="1900-01-01" max="2050-12-31">
+    </div>
+    <span *ngIf="agregarvuelo.get('fecha')?.invalid && agregarvuelo.get('fecha')?.touched" class="text-danger">
+        La <strong>Fecha</strong> es requerida
+    </span>
+    <div class="mb-3">
+        <label for="HoraS" class="form-label">Hora Salida:</label>
+        <input formControlName="horasalida" type="text" class="form-control" id="HoraS" placeholder="12" min="1" max="24">
+    </div>
+    <span *ngIf="agregarvuelo.get('horasalida')?.invalid && agregarvuelo.get('horasalida')?.touched" class="text-danger">
+        La <strong>Hora de Salida</strong> es requerida
+    </span>
+    <div class="mb-3">
+        <label for="HoraL" class="form-label">Hora Llegada:</label>
+        <input formControlName="horallegada" type="text" class="form-control" id="HoraL" placeholder="12" min="1" max="24">
+    </div>
+    <span *ngIf="agregarvuelo.get('horallegada')?.invalid && agregarvuelo.get('horallegada')?.touched" class="text-danger">
+        La <strong>Hora de Llegada</strong> es requerida
+    </span>
+    <div class="mb-3">
+        <label for="NumV" class="form-label">Número de Vuelo:</label>
+        <input formControlName="numerodevuelo" type="text" class="form-control" id="NumV" placeholder="1" min="1">
+    </div>
+    <span *ngIf="agregarvuelo.get('numerodevuelo')?.invalid && agregarvuelo.get('numerodevuelo')?.touched" class="text-danger">
+        El <strong>N° de Vuelo</strong> es requerido
+    </span>
+    <div class="mb-3">
+        <label for="Aero" class="form-label">Aerolínea:</label>
+        <input formControlName="aerolinea" type="text" class="form-control" id="Aero" placeholder="Carvajal Airlines">
+    </div>
+    <span *ngIf="agregarvuelo.get('aerolinea')?.invalid && agregarvuelo.get('aerolinea')?.touched" class="text-danger">
+        La <strong>Aerolínea</strong> es requerida
+    </span>
+    <div class="mb-3">
+        <label for="Estado" class="form-label">Estado:</label>
+        <input formControlName="estado" type="text" class="form-control" id="Estado" placeholder="Retrasado">
+    </div>
+    <span *ngIf="agregarvuelo.get('estado')?.invalid && agregarvuelo.get('estado')?.touched" class="text-danger">
+        El <strong>Estado</strong> es requerido
+    </span>
+    <div>
+        <button type="button" routerLink="/vuelos" class="btn btn-secondary">Volver</button>
+        <button type="submit" [disabled]="agregarvuelo.invalid" style="float: right;" class="btn btn-primary justify-content-md-end">{{accion}}</button>
+    </div>
+
+</form>
